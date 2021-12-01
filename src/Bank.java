@@ -2,8 +2,9 @@ public class Bank {
 
     //Launch interactive bank
     public static void main(String[] args) {
-        //test exo 1
-        Client test = new Client("Geava");
-        test.afficherSolde();
+        //test exos
+        Client clientTest = new Client("Geava");
+        clientTest.ajouterCompte(new Compte());
+        clientTest.afficherSolde();
     }
 }

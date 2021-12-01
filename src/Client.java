@@ -1,10 +1,13 @@
 public class Client {
 
     private String nom;
-    private Compte compte = new Compte();
+    private Compte [] comptes = new Compte[100];
+    private int nbComptes = 0;
 
     Client(String nom) {
         this.nom = nom;
+        this.comptes[0] = new Compte();
+        this.nbComptes++;
     }
 
     /**
@@ -18,7 +21,11 @@ public class Client {
      * renvoie le solde du compte client
      */
     float getSolde() {
-       return this.compte.getSolde();
+       int sum = 0;
+       for (int i = 0; i < this.nbComptes; i++) {
+            sum+= this.comptes[i].getSolde();
+        }
+        return sum;
     }
 
     /**
@@ -26,5 +33,13 @@ public class Client {
      */
     void afficherSolde() {
         System.out.println("Le solde de " + this.nom + " est de " + this.getSolde() + " crédit(s).");
+    }
+
+    /**
+     * ajoute un compte au client
+     */
+    void ajouterCompte(Compte compte) {
+        this.comptes[this.nbComptes] = compte;
+        this.nbComptes++;
     }
 }
