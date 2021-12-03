@@ -17,5 +17,6 @@ public class Bank {
 
         bank.bilanClient(clientTest1.getUUID());
         bank.afficherBilan();
+        bank.interaction();
     }
 }

@@ -1,3 +1,4 @@
+import java.util.Scanner;
 import java.util.UUID;
 
 public class BanqueInteractive {
@@ -53,6 +54,23 @@ public class BanqueInteractive {
     }
 
     public void interaction() {
-        // TODO à faire
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("\nQuelle opération voulez-vous effectuer ?\n\n1) Ajouter un client\n2) Effectuer une opération sur un client\n3) Afficher un bilan général");
+        String choice = scanner.nextLine();
+
+        switch (choice) {
+            case "1":
+                //...
+                break;
+            case "2":
+                //...
+                break;
+            case "3":
+                //...
+                break;
+            default:
+                System.out.println("Choix incorrect");
+                break;
+        }
     }
 }
